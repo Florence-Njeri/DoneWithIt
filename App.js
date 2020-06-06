@@ -9,6 +9,10 @@ import {
   Image,
   SafeAreaView,
   TouchableWithoutFeedbackComponent,
+  Button,
+  Alert,
+  Platform,
+  StatusBar,
 } from 'react-native';
 
 export default function App () {
@@ -29,6 +33,24 @@ export default function App () {
           }}
         />
       </TouchableHighlight>
+      <Button
+        style={{margin: 16}}
+        color="orange"
+        title="Click Me"
+        onPress={() =>
+          Alert.alert ('My Title', 'My message', [
+            {text: 'Yes', onPress: () => console.log ('Yes')},
+            {text: 'No', onPress: () => console.log ('No')},
+          ])}
+      />
+
+      <Button
+        style={{margin: 16}}
+        color="orange"
+        title="Click Me"
+        onPress={() =>
+          Alert.prompt ('My title', 'My message', text => console.log (text))}
+      />
 
     </SafeAreaView>
   );
@@ -36,8 +58,8 @@ export default function App () {
 const styles = StyleSheet.create ({
   container: {
     flex: 1,
-    backgroundColor: 'dodgerblue',
-    justifyContent: 'center',
+    backgroundColor: '#fff',
     alignItems: 'center',
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
 });
