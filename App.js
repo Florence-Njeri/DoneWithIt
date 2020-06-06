@@ -26,19 +26,56 @@ export default function App() {
     console.log('Text pressed');
   };
   const {landscape} = useDeviceOrientation();
-  const bgImage = require('./assets/background.jpg');
+  const chairImage = require('./assets/chair.jpg');
   return (
-    <View
-      style={{
-        backgroundColor: '#fff',
-        flex: 1,
-        flexDirection: 'column',
-      }}
-    >
-      <ImageBackground style={styles.bgImage} source={bgImage} />
-      <View style={{  backgroundColor: '#fc5c65', flex: 0.3 }} />
-      <View style={{ backgroundColor: "#4ECDC4", flex: 0.3 }} />
+    <SafeAreaView style={styles.container}>
+      <View
+        style={{
+          backgroundColor: '#000',
+          width: '100%',
+          height: '50%',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          flex:1
+        }}
+      >
+        <View
+          style={{
+            backgroundColor: '#fc5c65',
+            height: 60,
+            width: 50,
+            margin: 16,
+          }}
+        />
+        <View
+          style={{
+            backgroundColor: '#4ECDC4',
+            height: 60,
+            width: 50,
+            margin: 16,
+          }}
+        />
       </View>
+      <Image
+        style={{
+          flex: 5,
+          width: '100%',
+          height: '100%',
+          flexDirection: 'column',
+        }}
+        source={chairImage}
+      />
+       <View
+        style={{
+          backgroundColor: '#000',
+          width: '100%',
+          height: '50%',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          flex:1
+        }}
+      />
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
@@ -47,10 +84,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
-  },
-  bgImage: {
-    flex: 3,
-    width: '100%',
-    height: '100%',
   }
 });

@@ -1,5 +1,6 @@
 import React from 'react';
 function WelcomeScreen(){
+  const bgImage = require('./assets/background.jpg');
 return (
     <View
       style={{
