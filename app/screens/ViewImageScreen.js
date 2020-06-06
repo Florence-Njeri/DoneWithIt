@@ -8,6 +8,9 @@ import {
   SafeAreaView,
 } from 'react-native';
 
+
+import colors from '../config/colors';
+
 function ViewImageScreen() {
   const chairImage = require('../assets/chair.jpg');
   return (
@@ -21,7 +24,7 @@ function ViewImageScreen() {
 
 const styles = StyleSheet.create({
   closeIcon: {
-    backgroundColor: '#fc5c65',
+    backgroundColor: colors.primaryColor,
     height: 50,
     width: 50,
     position: 'absolute',
@@ -30,10 +33,10 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: colors.black,
   },
   deleteIcon: {
-    backgroundColor: '#4ECDC4',
+    backgroundColor: colors.secondaryColor,
     height: 50,
     width: 50,
     position: 'absolute',
