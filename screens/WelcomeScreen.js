@@ -1,33 +1,6 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  TouchableHighlight,
-  View,
-  Image,
-  SafeAreaView,
-  TouchableWithoutFeedbackComponent,
-  Button,
-  Alert,
-  Platform,
-  StatusBar,
-  Dimensions,
-  ImageBackground,
-} from 'react-native';
-import {
-  useDimensions,
-  useDeviceOrientation,
-} from '@react-native-community/hooks';
-
-export default function App() {
-  const handlePress = () => {
-    console.log('Text pressed');
-  };
-  const {landscape} = useDeviceOrientation();
-  const bgImage = require('./assets/background.jpg');
-  return (
+function WelcomeScreen(){
+return (
     <View
       style={{
         backgroundColor: '#fff',
@@ -40,7 +13,7 @@ export default function App() {
       <View style={{ backgroundColor: "#4ECDC4", flex: 0.3 }} />
       </View>
   );
-}
+    }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -54,3 +27,4 @@ const styles = StyleSheet.create({
     height: '100%',
   }
 });
+export default WelcomeScreen;
