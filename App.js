@@ -2,8 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
 
 export default function App () {
-  let x = 1;
-  console.log ('App executed');
+  
   const handlePress = () => {
     console.log ('Text pressed');
   };
@@ -19,5 +18,7 @@ const styles = StyleSheet.create ({
   container: {
     flex: 1,
     backgroundColor: 'dodgerblue',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-});
+})
