@@ -13,49 +13,31 @@ import {
   Alert,
   Platform,
   StatusBar,
+  Dimensions,
 } from 'react-native';
+import {
+  useDimensions,
+  useDeviceOrientation,
+} from '@react-native-community/hooks';
 
-export default function App () {
+export default function App() {
   const handlePress = () => {
-    console.log ('Text pressed');
+    console.log('Text pressed');
   };
+  const {landscape} = useDeviceOrientation();
   return (
     <SafeAreaView style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}>
-        Hello React Native!!!
-      </Text>
-      <TouchableHighlight onPress={() => console.log ('Image tapped!!')}>
-        <Image
-          source={{
-            width: 200,
-            height: 300,
-            uri: 'https://picsum.photos/200/300',
-          }}
-        />
-      </TouchableHighlight>
-      <Button
-        style={{margin: 16}}
-        color="orange"
-        title="Click Me"
-        onPress={() =>
-          Alert.alert ('My Title', 'My message', [
-            {text: 'Yes', onPress: () => console.log ('Yes')},
-            {text: 'No', onPress: () => console.log ('No')},
-          ])}
+      <View
+        style={{
+          backgroundColor: 'dodgerblue',
+          width: '100%',
+          height: landscape ? '100%' : '30%',
+        }}
       />
-
-      <Button
-        style={{margin: 16}}
-        color="orange"
-        title="Click Me"
-        onPress={() =>
-          Alert.prompt ('My title', 'My message', text => console.log (text))}
-      />
-
     </SafeAreaView>
   );
 }
-const styles = StyleSheet.create ({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
