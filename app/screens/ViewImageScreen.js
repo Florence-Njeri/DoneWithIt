@@ -1,59 +1,51 @@
 import React from 'react';
-import {View} from 'react-native';
+import {
+  View,
+  ImageBackground,
+  Image,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+} from 'react-native';
 
 function ViewImageScreen() {
-  const chairImage = require('./app/assets/chair.jpg');
+  const chairImage = require('../assets/chair.jpg');
   return (
     <SafeAreaView style={styles.container}>
-      <View
-        style={{
-          backgroundColor: '#000',
-          width: '100%',
-          height: '50%',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          flex: 1,
-        }}
-      >
-        <View
-          style={{
-            backgroundColor: '#fc5c65',
-            height: 60,
-            width: 50,
-            margin: 16,
-          }}
-        />
-        <View
-          style={{
-            backgroundColor: '#4ECDC4',
-            height: 60,
-            width: 50,
-            margin: 16,
-          }}
-        />
-      </View>
-      <Image
-        style={{
-          flex: 4.5,
-          width: '100%',
-          height: '100%',
-          resizeMode: 'contain',
-          flexDirection: 'column',
-        }}
-        source={chairImage}
-      />
-      <View
-        style={{
-          backgroundColor: '#000',
-          width: '100%',
-          height: '50%',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          flex: 1,
-        }}
-      />
+      <View style={styles.closeIcon} />
+      <View style={styles.deleteIcon} />
+      <Image style={styles.image} source={chairImage} />
     </SafeAreaView>
   );
 }
 
+const styles = StyleSheet.create({
+  closeIcon: {
+    backgroundColor: '#fc5c65',
+    height: 50,
+    width: 50,
+    position: 'absolute',
+    top: 50,
+    left: 24,
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#000',
+  },
+  deleteIcon: {
+    backgroundColor: '#4ECDC4',
+    height: 50,
+    width: 50,
+    position: 'absolute',
+    top: 50,
+    right: 24,
+  },
+  image: {
+    flex: 4.5,
+    width: '100%',
+    height: '100%',
+    resizeMode: 'contain',
+    flexDirection: 'column',
+  },
+});
 export default ViewImageScreen;
