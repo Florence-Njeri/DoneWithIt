@@ -29,6 +29,20 @@ export default function App() {
   };
   const {landscape} = useDeviceOrientation();
   const chairImage = require('./app/assets/chair.jpg');
-  return(<ViewImageScreen/>) ;
+  return (
+    <View style={{flex: 1, justifyContent: 'center'}}>
+      <View
+        style={{
+          backgroundColor: 'dodgerblue',
+          width: 100,
+          height: 100,
+          shadowColor: 'grey',
+          shadowOffset: {width: 10, height: 10},
+          shadowOpacity: 1,
+          shadowRadius: 10,
+          elevation: 20,
+        }}
+      ></View>
+    </View>
+  );
 }
-
