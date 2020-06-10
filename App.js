@@ -30,19 +30,21 @@ export default function App() {
   const {landscape} = useDeviceOrientation();
   const chairImage = require('./app/assets/chair.jpg');
   return (
-    <View style={{flex: 1, justifyContent: 'center'}}>
-      <View
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text
         style={{
-          backgroundColor: 'dodgerblue',
-          width: 100,
-          height: 100,
-          shadowColor: 'grey',
-          shadowOffset: {width: 10, height: 10},
-          shadowOpacity: 1,
-          shadowRadius: 10,
-          elevation: 20,
+          fontSize: 24,
+          fontStyle: 'normal',
+          fontStyle: '600',
+          color: 'tomato',
+          textTransform: 'capitalize',
+          textDecorationLine: 'underline',
+          textAlign: 'justify',
+          lineHeight: 40,
         }}
-      ></View>
+      >
+        Coding with Florence. I love React Native!!
+      </Text>
     </View>
   );
 }
